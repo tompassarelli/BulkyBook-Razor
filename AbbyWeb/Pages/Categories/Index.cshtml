@@ -1,0 +1,25 @@
+@page
+@model AbbyWeb.Pages.Categories.IndexModel
+
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="col-12 mb-2">Categories</div>
+        <div class=<ul>
+    <li>List item one</li>
+    <li>List item two with subitems:
+        <ul>
+            <li>Subitem 1</li>
+            <li>Subitem 2</li>
+        </ul>
+    </li>
+    <li>Final list item</li>
+        <div class="col">Display Order</div>
+    </div>
+    @foreach (var cat in Model.Categories)
+    {
+    <div class="row">
+        <div class="col">@cat.Name</div>
+        <div class="col">@cat.DisplayOrder</div>
+    </div>
+    }
+</div>
