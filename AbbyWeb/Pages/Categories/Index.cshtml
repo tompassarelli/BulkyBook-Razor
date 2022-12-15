@@ -1,8 +1,33 @@
 @page
 @model AbbyWeb.Pages.Categories.IndexModel
 
-<div class="container" xmlns="http://www.w3.org/1999/html">
-    @foreach (var cat in Model.Categories)
-    {
-    }
+<div class="container">
+    @* user friendly page data *@
+    <div class="row">
+        
+        <div class="col-6">
+            <h2>Category List</h2>
+        </div>
+        <div class="col-6">
+            <a asp-page="create" class="btn btn-primary">Create New Category</a>
+        </div>
+    </div>
+    <br />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Category Name </th>
+                <th> Display Order</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            @foreach (var cat in Model.Categories)
+            {
+                <td style="width:30%">@cat.Name</td>
+                <td style="width:30%">@cat.DisplayOrder</td>
+            }
+        </tr>
+        </tbody>
+    </table>
 </div>
